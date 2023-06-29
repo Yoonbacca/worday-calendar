@@ -21,6 +21,18 @@ $(function () {
 
     // Save the user input in local storage
     localStorage.setItem(timeBlockId, userInput);
+
+    // Create badge var which will have 
+    let badge = $('<span>').addClass('position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success').text('Saved!');
+    if (this.children.length === 1) {
+      this.append(badge.get(0));
+
+      // Set timeout to fade out after 3000 ms
+      setTimeout(function() {
+        $('.badge').fadeOut();
+      }, 3000);
+    }
+
   } );
 
   // Run through each possible hour id in each time block
@@ -43,9 +55,6 @@ $(function () {
 
     $(hour).children("textarea").text(savedText);
   }
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
+
+
 });
