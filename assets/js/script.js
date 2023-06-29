@@ -30,7 +30,7 @@ $(function () {
       // Set timeout to fade out after 3000 ms
       setTimeout(function() {
         $('.badge').fadeOut();
-      }, 3000);
+      }, 1000);
     }
 
   } );
